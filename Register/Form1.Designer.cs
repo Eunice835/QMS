@@ -199,6 +199,7 @@
             Margin = new Padding(4, 3, 4, 3);
             Name = "Register";
             Text = "Register";
+            Load += Register_Load;
             ResumeLayout(false);
             PerformLayout();
         }

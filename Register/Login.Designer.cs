@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            button3 = new Button();
             Login_btn = new Button();
-            label1 = new Label();
             checkBox1 = new CheckBox();
             textBox2 = new TextBox();
             textBox1 = new TextBox();
@@ -42,29 +40,19 @@
             SignUp = new Label();
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
-            button1 = new Button();
             label6 = new Label();
             label7 = new Label();
+            textBox3 = new TextBox();
+            label1 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.Navy;
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(757, 649);
-            button3.Name = "button3";
-            button3.Size = new Size(112, 45);
-            button3.TabIndex = 28;
-            button3.Text = "Sign Up";
-            button3.UseVisualStyleBackColor = false;
             // 
             // Login_btn
             // 
             Login_btn.BackColor = Color.Navy;
             Login_btn.ForeColor = Color.White;
-            Login_btn.Location = new Point(676, 420);
+            Login_btn.Location = new Point(678, 496);
             Login_btn.Name = "Login_btn";
             Login_btn.Size = new Size(112, 45);
             Login_btn.TabIndex = 27;
@@ -72,19 +60,10 @@
             Login_btn.UseVisualStyleBackColor = false;
             Login_btn.Click += button1_Click;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(491, 657);
-            label1.Name = "label1";
-            label1.Size = new Size(239, 28);
-            label1.TabIndex = 26;
-            label1.Text = "Don't Have an Account?";
-            // 
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(778, 512);
+            checkBox1.Location = new Point(780, 588);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(184, 32);
             checkBox1.TabIndex = 25;
@@ -94,7 +73,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(555, 344);
+            textBox2.Location = new Point(557, 420);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(407, 37);
@@ -119,7 +98,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(443, 347);
+            label4.Location = new Point(445, 423);
             label4.Name = "label4";
             label4.Size = new Size(101, 28);
             label4.TabIndex = 18;
@@ -157,7 +136,6 @@
             // 
             panel1.BackColor = Color.Navy;
             panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(button1);
             panel1.Controls.Add(label6);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
@@ -174,17 +152,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
-            // 
-            // button1
-            // 
-            button1.BackColor = SystemColors.ControlLightLight;
-            button1.ForeColor = Color.Navy;
-            button1.Location = new Point(79, 637);
-            button1.Name = "button1";
-            button1.Size = new Size(274, 37);
-            button1.TabIndex = 1;
-            button1.Text = "Sign In";
-            button1.UseVisualStyleBackColor = false;
             // 
             // label6
             // 
@@ -212,17 +179,34 @@
             label7.Text = "X";
             label7.Click += label7_Click;
             // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(555, 327);
+            textBox3.Multiline = true;
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(407, 37);
+            textBox3.TabIndex = 32;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(445, 330);
+            label1.Name = "label1";
+            label1.Size = new Size(64, 28);
+            label1.TabIndex = 31;
+            label1.Text = "Email";
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(12F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
             ClientSize = new Size(1002, 712);
+            Controls.Add(textBox3);
+            Controls.Add(label1);
             Controls.Add(label7);
             Controls.Add(panel1);
-            Controls.Add(button3);
             Controls.Add(Login_btn);
-            Controls.Add(label1);
             Controls.Add(checkBox1);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
@@ -243,10 +227,7 @@
         }
 
         #endregion
-
-        private Button button3;
         private Button Login_btn;
-        private Label label1;
         private CheckBox checkBox1;
         private TextBox textBox2;
         private TextBox textBox1;
@@ -257,8 +238,9 @@
         private Label SignUp;
         private Panel panel1;
         private Label label6;
-        private Button button1;
         private Label label7;
         private PictureBox pictureBox1;
+        private TextBox textBox3;
+        private Label label1;
     }
 }

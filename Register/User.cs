@@ -101,5 +101,12 @@ namespace Register
         {
 
         }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            Counter counter = new Counter();
+            counter.Show();
+            this.Hide();
+        }
     }
 }

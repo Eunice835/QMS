@@ -86,7 +86,7 @@
             // dataGridView1
             // 
             dataGridView1.AllowUserToOrderColumns = true;
-            dataGridView1.BackgroundColor = Color.LightSteelBlue;
+            dataGridView1.BackgroundColor = Color.Navy;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.GridColor = SystemColors.ScrollBar;
             dataGridView1.Location = new Point(268, 254);
@@ -107,7 +107,7 @@
             // 
             // button_add_new
             // 
-            button_add_new.Location = new Point(434, 197);
+            button_add_new.Location = new Point(292, 200);
             button_add_new.Name = "button_add_new";
             button_add_new.Size = new Size(136, 35);
             button_add_new.TabIndex = 4;
@@ -254,6 +254,7 @@
             guna2Button2.Size = new Size(157, 52);
             guna2Button2.TabIndex = 1;
             guna2Button2.Text = "Counter";
+            guna2Button2.Click += guna2Button2_Click;
             // 
             // guna2Button1
             // 

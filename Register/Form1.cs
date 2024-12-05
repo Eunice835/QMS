@@ -23,5 +23,10 @@ namespace Register
         private void button1_Click(object sender, EventArgs e)
         {
         }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
