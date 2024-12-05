@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             Login_btn = new Button();
             checkBox1 = new CheckBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            tbPassword = new TextBox();
+            tbUsername = new TextBox();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
@@ -42,8 +42,6 @@
             pictureBox1 = new PictureBox();
             label6 = new Label();
             label7 = new Label();
-            textBox3 = new TextBox();
-            label1 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -52,7 +50,7 @@
             // 
             Login_btn.BackColor = Color.Navy;
             Login_btn.ForeColor = Color.White;
-            Login_btn.Location = new Point(678, 496);
+            Login_btn.Location = new Point(670, 394);
             Login_btn.Name = "Login_btn";
             Login_btn.Size = new Size(112, 45);
             Login_btn.TabIndex = 27;
@@ -71,21 +69,21 @@
             checkBox1.UseVisualStyleBackColor = true;
             checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
-            // textBox2
+            // tbPassword
             // 
-            textBox2.Location = new Point(557, 420);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(407, 37);
-            textBox2.TabIndex = 22;
+            tbPassword.Location = new Point(555, 313);
+            tbPassword.Multiline = true;
+            tbPassword.Name = "tbPassword";
+            tbPassword.Size = new Size(407, 37);
+            tbPassword.TabIndex = 22;
             // 
-            // textBox1
+            // tbUsername
             // 
-            textBox1.Location = new Point(555, 238);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(407, 37);
-            textBox1.TabIndex = 21;
+            tbUsername.Location = new Point(555, 238);
+            tbUsername.Multiline = true;
+            tbUsername.Name = "tbUsername";
+            tbUsername.Size = new Size(407, 37);
+            tbUsername.TabIndex = 21;
             // 
             // label5
             // 
@@ -98,7 +96,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(445, 423);
+            label4.Location = new Point(443, 316);
             label4.Name = "label4";
             label4.Size = new Size(101, 28);
             label4.TabIndex = 18;
@@ -179,37 +177,18 @@
             label7.Text = "X";
             label7.Click += label7_Click;
             // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(555, 327);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(407, 37);
-            textBox3.TabIndex = 32;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(445, 330);
-            label1.Name = "label1";
-            label1.Size = new Size(64, 28);
-            label1.TabIndex = 31;
-            label1.Text = "Email";
-            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(12F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
             ClientSize = new Size(1002, 712);
-            Controls.Add(textBox3);
-            Controls.Add(label1);
             Controls.Add(label7);
             Controls.Add(panel1);
             Controls.Add(Login_btn);
             Controls.Add(checkBox1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(tbPassword);
+            Controls.Add(tbUsername);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -229,8 +208,8 @@
         #endregion
         private Button Login_btn;
         private CheckBox checkBox1;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox tbPassword;
+        private TextBox tbUsername;
         private Label label5;
         private Label label4;
         private Label label3;
@@ -240,7 +219,5 @@
         private Label label6;
         private Label label7;
         private PictureBox pictureBox1;
-        private TextBox textBox3;
-        private Label label1;
     }
 }
