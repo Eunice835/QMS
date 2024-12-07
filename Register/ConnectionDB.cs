@@ -11,7 +11,7 @@ namespace Register
     {
         
 
-        public static string connectionString = "server=localhost;port=3306;database=queue_db;uid=eunice;pwd=password123;";
+        public static string connectionString = "server=localhost;port=3306;database=queue_db;uid=eunice";
 
         public static MySqlConnection GetConnection()
         {

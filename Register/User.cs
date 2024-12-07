@@ -14,8 +14,8 @@ namespace Register
 {
     public partial class User : Form
     {
-
-        string connectionString = "server=localhost;database=queue_db;uid=eunice;pwd=password123;";
+        string connectionString = connectionDB.connectionString;
+        //string connectionString = "server=localhost;database=queue_db;uid=eunice;pwd=password123;";
         public User()
         {
             InitializeComponent();
@@ -106,6 +106,13 @@ namespace Register
         {
             Counter counter = new Counter();
             counter.Show();
+            this.Hide();
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            QueueList queueList = new QueueList();
+            queueList.Show();
             this.Hide();
         }
     }

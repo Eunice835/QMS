@@ -13,9 +13,11 @@ namespace Register
 {
     public partial class QueueList : Form
     {
+        MySqlConnection connection = connectionDB.GetConnection();
         public QueueList()
         {
             InitializeComponent();
+            fill_proceeding();
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
@@ -80,6 +82,66 @@ namespace Register
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fill_proceeding()
+        {
+            using (MySqlConnection conn = new MySqlConnection(connection.ConnectionString))
+            {
+                conn.Open();
+                string query = @"SELECT name, time, queue_number FROM proceeding_queue";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    // Clear existing rows in the DataGridView
+                    dgProceeding.Rows.Clear();
+
+                    // Loop through the data reader and populate the DataGridView
+                    while (reader.Read())
+                    {
+                        // Assuming you have the columns in the DataGridView set up correctly
+                        int rowIndex = dgProceeding.Rows.Add();
+                        DataGridViewRow row = dgProceeding.Rows[rowIndex];
+
+                        // Populate the row with data from the reader
+                        row.Cells["Name"].Value = reader["name"];
+                        row.Cells["QueueNumber"].Value = reader["queue_number"];
+                        row.Cells["Time"].Value = reader["time"];
+                    }
+                }
+            }
+
+            using (MySqlConnection conn = new MySqlConnection(connection.ConnectionString))
+            {
+                conn.Open();
+                string query = @"SELECT name, time, queue_number FROM live_queue";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    // Clear existing rows in the DataGridView
+                    dgLive.Rows.Clear();
+
+                    // Loop through the data reader and populate the DataGridView
+                    while (reader.Read())
+                    {
+                        // Assuming you have the columns in the DataGridView set up correctly
+                        int rowIndex = dgLive.Rows.Add();
+                        DataGridViewRow row = dgLive.Rows[rowIndex];
+
+                        // Populate the row with data from the reader
+                        row.Cells["NameL"].Value = reader["name"];
+                        row.Cells["QueueNumberL"].Value = reader["queue_number"];
+                        row.Cells["TimeL"].Value = reader["time"];
+                    }
+                }
+            }
+        }
+
+        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -220,6 +220,7 @@
             guna2Button4.Size = new Size(157, 52);
             guna2Button4.TabIndex = 3;
             guna2Button4.Text = "Queue List";
+            guna2Button4.Click += guna2Button4_Click;
             // 
             // guna2Button3
             // 
