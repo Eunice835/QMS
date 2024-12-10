@@ -121,7 +121,7 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAADhmSURBVHhe7d0L
+        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAADhmSURBVHhe7d0L
         tCVXXefxdEcSUZGH4gOChvR5dOemH1V1762q7iCtohLBBy5anXHUURlnzYBCkBFHZsagSwElISGB7kaX
         grqWy7hmRIMEyINHQAUCOiS9ZsbbBMUE5BUkwTw6nTC7bv+uq6n+d3L+59SpW6f297PWbyWE7l9V7dr3
         7vs4Z9cZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADDgQNnDrK920ZJcVHIi8dpfmiY5m8bpcVfhXxk
@@ -365,6 +365,15 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAKCbzjjj/wM0LQZ+A9q60gAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="CounterQ.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="NameQ.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="TimeQ.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAKEAAAChCAYAAACvUd+2AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAW

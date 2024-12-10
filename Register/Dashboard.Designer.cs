@@ -49,25 +49,29 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel7 = new Panel();
             label3 = new Label();
-            label4 = new Label();
+            lblQueue = new Label();
             panel6 = new Panel();
-            label7 = new Label();
+            lblPending = new Label();
             pending = new Label();
             panel5 = new Panel();
             label6 = new Label();
-            label5 = new Label();
+            lblCompleted = new Label();
             panel8 = new Panel();
             label1 = new Label();
-            label2 = new Label();
+            lblCounter = new Label();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
@@ -81,8 +85,13 @@
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             panel4 = new Panel();
             guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
+            label11 = new Label();
+            label10 = new Label();
+            pbCompleted = new Guna.UI2.WinForms.Guna2ProgressBar();
+            pbQueue = new Guna.UI2.WinForms.Guna2ProgressBar();
+            label9 = new Label();
+            pbPending = new Guna.UI2.WinForms.Guna2ProgressBar();
+            dgDashboard = new Guna.UI2.WinForms.Guna2DataGridView();
             Counter = new DataGridViewTextBoxColumn();
             Ticket = new DataGridViewTextBoxColumn();
             panel7.SuspendLayout();
@@ -94,68 +103,74 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel4.SuspendLayout();
             guna2Panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgDashboard).BeginInit();
             SuspendLayout();
             // 
             // panel7
             // 
             panel7.BackColor = Color.Navy;
             panel7.Controls.Add(label3);
-            panel7.Controls.Add(label4);
-            panel7.Location = new Point(637, 109);
+            panel7.Controls.Add(lblQueue);
+            panel7.Location = new Point(510, 87);
+            panel7.Margin = new Padding(2);
             panel7.Name = "panel7";
-            panel7.Size = new Size(173, 150);
+            panel7.Size = new Size(138, 120);
             panel7.TabIndex = 17;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.BackColor = SystemColors.ControlLightLight;
-            label3.Location = new Point(42, 69);
+            label3.Location = new Point(34, 55);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(93, 25);
+            label3.Size = new Size(75, 20);
             label3.TabIndex = 2;
             label3.Text = "On Queue";
             // 
-            // label4
+            // lblQueue
             // 
-            label4.AutoSize = true;
-            label4.BackColor = SystemColors.ControlLightLight;
-            label4.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(70, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(33, 38);
-            label4.TabIndex = 1;
-            label4.Text = "7";
+            lblQueue.AutoSize = true;
+            lblQueue.BackColor = SystemColors.ControlLightLight;
+            lblQueue.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblQueue.Location = new Point(56, 0);
+            lblQueue.Margin = new Padding(2, 0, 2, 0);
+            lblQueue.Name = "lblQueue";
+            lblQueue.Size = new Size(28, 32);
+            lblQueue.TabIndex = 1;
+            lblQueue.Text = "7";
             // 
             // panel6
             // 
             panel6.BackColor = Color.Navy;
-            panel6.Controls.Add(label7);
+            panel6.Controls.Add(lblPending);
             panel6.Controls.Add(pending);
-            panel6.Location = new Point(458, 108);
+            panel6.Location = new Point(366, 86);
+            panel6.Margin = new Padding(2);
             panel6.Name = "panel6";
-            panel6.Size = new Size(173, 150);
+            panel6.Size = new Size(138, 120);
             panel6.TabIndex = 15;
             // 
-            // label7
+            // lblPending
             // 
-            label7.AutoSize = true;
-            label7.BackColor = SystemColors.ControlLightLight;
-            label7.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(73, -2);
-            label7.Name = "label7";
-            label7.Size = new Size(33, 38);
-            label7.TabIndex = 2;
-            label7.Text = "5";
+            lblPending.AutoSize = true;
+            lblPending.BackColor = SystemColors.ControlLightLight;
+            lblPending.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPending.Location = new Point(58, -2);
+            lblPending.Margin = new Padding(2, 0, 2, 0);
+            lblPending.Name = "lblPending";
+            lblPending.Size = new Size(28, 32);
+            lblPending.TabIndex = 2;
+            lblPending.Text = "5";
             // 
             // pending
             // 
             pending.AutoSize = true;
             pending.BackColor = SystemColors.ControlLightLight;
-            pending.Location = new Point(46, 69);
+            pending.Location = new Point(37, 55);
+            pending.Margin = new Padding(2, 0, 2, 0);
             pending.Name = "pending";
-            pending.Size = new Size(76, 25);
+            pending.Size = new Size(62, 20);
             pending.TabIndex = 1;
             pending.Text = "Pending";
             // 
@@ -163,83 +178,91 @@
             // 
             panel5.BackColor = Color.Navy;
             panel5.Controls.Add(label6);
-            panel5.Controls.Add(label5);
-            panel5.Location = new Point(816, 109);
+            panel5.Controls.Add(lblCompleted);
+            panel5.Location = new Point(653, 87);
+            panel5.Margin = new Padding(2);
             panel5.Name = "panel5";
-            panel5.Size = new Size(173, 150);
+            panel5.Size = new Size(138, 120);
             panel5.TabIndex = 16;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.BackColor = SystemColors.ControlLightLight;
-            label6.Location = new Point(38, 69);
+            label6.Location = new Point(30, 55);
+            label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(100, 25);
+            label6.Size = new Size(83, 20);
             label6.TabIndex = 3;
             label6.Text = "Completed";
             // 
-            // label5
+            // lblCompleted
             // 
-            label5.AutoSize = true;
-            label5.BackColor = SystemColors.ControlLightLight;
-            label5.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(76, -1);
-            label5.Name = "label5";
-            label5.Size = new Size(49, 38);
-            label5.TabIndex = 2;
-            label5.Text = "10";
+            lblCompleted.AutoSize = true;
+            lblCompleted.BackColor = SystemColors.ControlLightLight;
+            lblCompleted.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblCompleted.Location = new Point(61, -1);
+            lblCompleted.Margin = new Padding(2, 0, 2, 0);
+            lblCompleted.Name = "lblCompleted";
+            lblCompleted.Size = new Size(42, 32);
+            lblCompleted.TabIndex = 2;
+            lblCompleted.Text = "10";
             // 
             // panel8
             // 
             panel8.BackColor = Color.Navy;
             panel8.Controls.Add(label1);
-            panel8.Controls.Add(label2);
-            panel8.Location = new Point(279, 107);
+            panel8.Controls.Add(lblCounter);
+            panel8.Location = new Point(223, 86);
+            panel8.Margin = new Padding(2);
             panel8.Name = "panel8";
-            panel8.Size = new Size(173, 150);
+            panel8.Size = new Size(138, 120);
             panel8.TabIndex = 16;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.BackColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(46, 69);
+            label1.Location = new Point(37, 55);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(83, 25);
+            label1.Size = new Size(67, 20);
             label1.TabIndex = 1;
             label1.Text = "Counters";
             // 
-            // label2
+            // lblCounter
             // 
-            label2.AutoSize = true;
-            label2.BackColor = SystemColors.ControlLightLight;
-            label2.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(73, -1);
-            label2.Name = "label2";
-            label2.Size = new Size(33, 38);
-            label2.TabIndex = 0;
-            label2.Text = "3";
+            lblCounter.AutoSize = true;
+            lblCounter.BackColor = SystemColors.ControlLightLight;
+            lblCounter.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblCounter.Location = new Point(58, -1);
+            lblCounter.Margin = new Padding(2, 0, 2, 0);
+            lblCounter.Name = "lblCounter";
+            lblCounter.Size = new Size(28, 32);
+            lblCounter.TabIndex = 0;
+            lblCounter.Text = "3";
             // 
             // guna2Panel1
             // 
             guna2Panel1.BackColor = Color.Navy;
             guna2Panel1.Controls.Add(guna2Panel2);
             guna2Panel1.CustomizableEdges = customizableEdges3;
-            guna2Panel1.Location = new Point(248, 14);
+            guna2Panel1.Location = new Point(198, 11);
+            guna2Panel1.Margin = new Padding(2);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Panel1.Size = new Size(741, 61);
+            guna2Panel1.Size = new Size(593, 49);
             guna2Panel1.TabIndex = 18;
             // 
             // guna2Panel2
             // 
             guna2Panel2.BackColor = SystemColors.ControlLightLight;
             guna2Panel2.CustomizableEdges = customizableEdges1;
-            guna2Panel2.Location = new Point(3, 3);
+            guna2Panel2.Location = new Point(2, 2);
+            guna2Panel2.Margin = new Padding(2);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Panel2.Size = new Size(735, 55);
+            guna2Panel2.Size = new Size(588, 44);
             guna2Panel2.TabIndex = 19;
             // 
             // guna2Panel3
@@ -254,18 +277,20 @@
             guna2Panel3.Controls.Add(guna2Button2);
             guna2Panel3.Controls.Add(guna2Button1);
             guna2Panel3.CustomizableEdges = customizableEdges19;
-            guna2Panel3.Location = new Point(9, 14);
+            guna2Panel3.Location = new Point(7, 11);
+            guna2Panel3.Margin = new Padding(2);
             guna2Panel3.Name = "guna2Panel3";
             guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            guna2Panel3.Size = new Size(233, 774);
+            guna2Panel3.Size = new Size(186, 619);
             guna2Panel3.TabIndex = 19;
             // 
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(38, 22);
+            pictureBox3.Location = new Point(30, 18);
+            pictureBox3.Margin = new Padding(2);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(161, 132);
+            pictureBox3.Size = new Size(129, 106);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 15;
             pictureBox3.TabStop = false;
@@ -280,10 +305,11 @@
             guna2Button7.FillColor = SystemColors.ControlLightLight;
             guna2Button7.Font = new Font("Segoe UI", 9F);
             guna2Button7.ForeColor = Color.Black;
-            guna2Button7.Location = new Point(38, 424);
+            guna2Button7.Location = new Point(30, 339);
+            guna2Button7.Margin = new Padding(2);
             guna2Button7.Name = "guna2Button7";
             guna2Button7.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2Button7.Size = new Size(157, 52);
+            guna2Button7.Size = new Size(126, 42);
             guna2Button7.TabIndex = 6;
             guna2Button7.Text = "Category";
             guna2Button7.Click += guna2Button7_Click;
@@ -298,10 +324,11 @@
             guna2Button6.FillColor = SystemColors.ControlLightLight;
             guna2Button6.Font = new Font("Segoe UI", 9F);
             guna2Button6.ForeColor = Color.Black;
-            guna2Button6.Location = new Point(38, 695);
+            guna2Button6.Location = new Point(30, 556);
+            guna2Button6.Margin = new Padding(2);
             guna2Button6.Name = "guna2Button6";
             guna2Button6.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2Button6.Size = new Size(157, 52);
+            guna2Button6.Size = new Size(126, 42);
             guna2Button6.TabIndex = 5;
             guna2Button6.Text = "Profile";
             // 
@@ -315,10 +342,11 @@
             guna2Button5.FillColor = SystemColors.ControlLightLight;
             guna2Button5.Font = new Font("Segoe UI", 9F);
             guna2Button5.ForeColor = Color.Black;
-            guna2Button5.Location = new Point(38, 606);
+            guna2Button5.Location = new Point(30, 485);
+            guna2Button5.Margin = new Padding(2);
             guna2Button5.Name = "guna2Button5";
             guna2Button5.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            guna2Button5.Size = new Size(157, 52);
+            guna2Button5.Size = new Size(126, 42);
             guna2Button5.TabIndex = 4;
             guna2Button5.Text = "Report";
             guna2Button5.Click += guna2Button5_Click;
@@ -333,10 +361,11 @@
             guna2Button4.FillColor = SystemColors.ControlLightLight;
             guna2Button4.Font = new Font("Segoe UI", 9F);
             guna2Button4.ForeColor = Color.Black;
-            guna2Button4.Location = new Point(38, 516);
+            guna2Button4.Location = new Point(30, 413);
+            guna2Button4.Margin = new Padding(2);
             guna2Button4.Name = "guna2Button4";
             guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2Button4.Size = new Size(157, 52);
+            guna2Button4.Size = new Size(126, 42);
             guna2Button4.TabIndex = 3;
             guna2Button4.Text = "Queue List";
             guna2Button4.Click += guna2Button4_Click;
@@ -351,10 +380,11 @@
             guna2Button3.FillColor = SystemColors.ControlLightLight;
             guna2Button3.Font = new Font("Segoe UI", 9F);
             guna2Button3.ForeColor = Color.Black;
-            guna2Button3.Location = new Point(38, 259);
+            guna2Button3.Location = new Point(30, 207);
+            guna2Button3.Margin = new Padding(2);
             guna2Button3.Name = "guna2Button3";
             guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            guna2Button3.Size = new Size(157, 52);
+            guna2Button3.Size = new Size(126, 42);
             guna2Button3.TabIndex = 2;
             guna2Button3.Text = "Users";
             // 
@@ -368,10 +398,11 @@
             guna2Button2.FillColor = SystemColors.ControlLightLight;
             guna2Button2.Font = new Font("Segoe UI", 9F);
             guna2Button2.ForeColor = Color.Black;
-            guna2Button2.Location = new Point(38, 344);
+            guna2Button2.Location = new Point(30, 275);
+            guna2Button2.Margin = new Padding(2);
             guna2Button2.Name = "guna2Button2";
             guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            guna2Button2.Size = new Size(157, 52);
+            guna2Button2.Size = new Size(126, 42);
             guna2Button2.TabIndex = 1;
             guna2Button2.Text = "Counter";
             guna2Button2.Click += guna2Button2_Click;
@@ -386,10 +417,11 @@
             guna2Button1.FillColor = SystemColors.ControlLightLight;
             guna2Button1.Font = new Font("Segoe UI", 9F);
             guna2Button1.ForeColor = Color.Black;
-            guna2Button1.Location = new Point(38, 176);
+            guna2Button1.Location = new Point(30, 141);
+            guna2Button1.Margin = new Padding(2);
             guna2Button1.Name = "guna2Button1";
             guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            guna2Button1.Size = new Size(157, 52);
+            guna2Button1.Size = new Size(126, 42);
             guna2Button1.TabIndex = 0;
             guna2Button1.Text = "Dashboard";
             // 
@@ -403,36 +435,102 @@
             panel4.Controls.Add(panel6);
             panel4.Controls.Add(panel7);
             panel4.Location = new Point(0, 0);
+            panel4.Margin = new Padding(2);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1003, 801);
+            panel4.Size = new Size(802, 641);
             panel4.TabIndex = 16;
             // 
             // guna2Panel4
             // 
-            guna2Panel4.Controls.Add(guna2Panel5);
-            guna2Panel4.Controls.Add(guna2DataGridView1);
-            guna2Panel4.CustomizableEdges = customizableEdges23;
-            guna2Panel4.Location = new Point(279, 319);
+            guna2Panel4.Controls.Add(label11);
+            guna2Panel4.Controls.Add(label10);
+            guna2Panel4.Controls.Add(pbCompleted);
+            guna2Panel4.Controls.Add(pbQueue);
+            guna2Panel4.Controls.Add(label9);
+            guna2Panel4.Controls.Add(pbPending);
+            guna2Panel4.Controls.Add(dgDashboard);
+            guna2Panel4.CustomizableEdges = customizableEdges27;
+            guna2Panel4.Location = new Point(223, 252);
+            guna2Panel4.Margin = new Padding(2);
             guna2Panel4.Name = "guna2Panel4";
-            guna2Panel4.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            guna2Panel4.Size = new Size(710, 370);
+            guna2Panel4.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            guna2Panel4.Size = new Size(568, 378);
             guna2Panel4.TabIndex = 20;
             guna2Panel4.Paint += guna2Panel4_Paint;
             // 
-            // guna2Panel5
+            // label11
             // 
-            guna2Panel5.BackColor = SystemColors.ControlDark;
-            guna2Panel5.CustomizableEdges = customizableEdges21;
-            guna2Panel5.Location = new Point(316, 11);
-            guna2Panel5.Name = "guna2Panel5";
-            guna2Panel5.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            guna2Panel5.Size = new Size(359, 342);
-            guna2Panel5.TabIndex = 1;
+            label11.AutoSize = true;
+            label11.BackColor = SystemColors.ControlLightLight;
+            label11.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.Location = new Point(257, 176);
+            label11.Margin = new Padding(2, 0, 2, 0);
+            label11.Name = "label11";
+            label11.Size = new Size(104, 25);
+            label11.TabIndex = 9;
+            label11.Text = "Completed";
             // 
-            // guna2DataGridView1
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = SystemColors.ControlLightLight;
+            label10.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.Location = new Point(257, 88);
+            label10.Margin = new Padding(2, 0, 2, 0);
+            label10.Name = "label10";
+            label10.Size = new Size(98, 25);
+            label10.TabIndex = 7;
+            label10.Text = "On Queue";
+            // 
+            // pbCompleted
+            // 
+            pbCompleted.CustomizableEdges = customizableEdges21;
+            pbCompleted.Location = new Point(257, 214);
+            pbCompleted.Name = "pbCompleted";
+            pbCompleted.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            pbCompleted.Size = new Size(276, 31);
+            pbCompleted.TabIndex = 8;
+            pbCompleted.Text = "guna2ProgressBar4";
+            pbCompleted.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
+            // pbQueue
+            // 
+            pbQueue.CustomizableEdges = customizableEdges23;
+            pbQueue.Location = new Point(257, 126);
+            pbQueue.Name = "pbQueue";
+            pbQueue.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            pbQueue.Size = new Size(276, 31);
+            pbQueue.TabIndex = 6;
+            pbQueue.Text = "guna2ProgressBar3";
+            pbQueue.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.BackColor = SystemColors.ControlLightLight;
+            label9.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.Location = new Point(257, 7);
+            label9.Margin = new Padding(2, 0, 2, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(81, 25);
+            label9.TabIndex = 5;
+            label9.Text = "Pending";
+            // 
+            // pbPending
+            // 
+            pbPending.CustomizableEdges = customizableEdges25;
+            pbPending.Location = new Point(257, 45);
+            pbPending.Name = "pbPending";
+            pbPending.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            pbPending.Size = new Size(276, 31);
+            pbPending.TabIndex = 4;
+            pbPending.Text = "guna2ProgressBar2";
+            pbPending.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
+            // dgDashboard
             // 
             dataGridViewCellStyle1.BackColor = Color.White;
-            guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgDashboard.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
@@ -440,10 +538,10 @@
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            guna2DataGridView1.ColumnHeadersHeight = 27;
-            guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            guna2DataGridView1.Columns.AddRange(new DataGridViewColumn[] { Counter, Ticket });
+            dgDashboard.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgDashboard.ColumnHeadersHeight = 27;
+            dgDashboard.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgDashboard.Columns.AddRange(new DataGridViewColumn[] { Counter, Ticket });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
@@ -451,36 +549,38 @@
             dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            guna2DataGridView1.GridColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.Location = new Point(14, 11);
-            guna2DataGridView1.Name = "guna2DataGridView1";
-            guna2DataGridView1.RowHeadersVisible = false;
-            guna2DataGridView1.RowHeadersWidth = 62;
-            guna2DataGridView1.Size = new Size(251, 356);
-            guna2DataGridView1.TabIndex = 0;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            guna2DataGridView1.ThemeStyle.BackColor = Color.White;
-            guna2DataGridView1.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
-            guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
-            guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 27;
-            guna2DataGridView1.ThemeStyle.ReadOnly = false;
-            guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = Color.White;
-            guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            guna2DataGridView1.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
-            guna2DataGridView1.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
-            guna2DataGridView1.ThemeStyle.RowsStyle.Height = 33;
-            guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            guna2DataGridView1.CellContentClick += guna2DataGridView1_CellContentClick;
+            dgDashboard.DefaultCellStyle = dataGridViewCellStyle3;
+            dgDashboard.GridColor = Color.FromArgb(231, 229, 255);
+            dgDashboard.Location = new Point(11, 9);
+            dgDashboard.Margin = new Padding(2);
+            dgDashboard.Name = "dgDashboard";
+            dgDashboard.RowHeadersVisible = false;
+            dgDashboard.RowHeadersWidth = 62;
+            dgDashboard.RowTemplate.Height = 33;
+            dgDashboard.Size = new Size(231, 321);
+            dgDashboard.TabIndex = 0;
+            dgDashboard.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            dgDashboard.ThemeStyle.AlternatingRowsStyle.Font = null;
+            dgDashboard.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            dgDashboard.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            dgDashboard.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            dgDashboard.ThemeStyle.BackColor = Color.White;
+            dgDashboard.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            dgDashboard.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
+            dgDashboard.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgDashboard.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
+            dgDashboard.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            dgDashboard.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgDashboard.ThemeStyle.HeaderStyle.Height = 27;
+            dgDashboard.ThemeStyle.ReadOnly = false;
+            dgDashboard.ThemeStyle.RowsStyle.BackColor = Color.White;
+            dgDashboard.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgDashboard.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
+            dgDashboard.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            dgDashboard.ThemeStyle.RowsStyle.Height = 33;
+            dgDashboard.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dgDashboard.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgDashboard.CellContentClick += guna2DataGridView1_CellContentClick;
             // 
             // Counter
             // 
@@ -496,10 +596,11 @@
             // 
             // Dashboard
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1002, 800);
+            ClientSize = new Size(802, 640);
             Controls.Add(panel4);
+            Margin = new Padding(2);
             Name = "Dashboard";
             Text = "Dashboard";
             panel7.ResumeLayout(false);
@@ -515,7 +616,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel4.ResumeLayout(false);
             guna2Panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).EndInit();
+            guna2Panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgDashboard).EndInit();
             ResumeLayout(false);
         }
 
@@ -523,16 +625,16 @@
 
         private Panel panel7;
         private Label label3;
-        private Label label4;
+        private Label lblQueue;
         private Panel panel6;
-        private Label label7;
+        private Label lblPending;
         private Label pending;
         private Panel panel5;
         private Label label6;
-        private Label label5;
+        private Label lblCompleted;
         private Panel panel8;
         private Label label1;
-        private Label label2;
+        private Label lblCounter;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
@@ -546,9 +648,14 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Panel panel4;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
-        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
+        private Guna.UI2.WinForms.Guna2DataGridView dgDashboard;
         private DataGridViewTextBoxColumn Counter;
         private DataGridViewTextBoxColumn Ticket;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
+        private Label label11;
+        private Label label10;
+        private Guna.UI2.WinForms.Guna2ProgressBar pbCompleted;
+        private Guna.UI2.WinForms.Guna2ProgressBar pbQueue;
+        private Label label9;
+        private Guna.UI2.WinForms.Guna2ProgressBar pbPending;
     }
 }

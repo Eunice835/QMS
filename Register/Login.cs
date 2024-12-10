@@ -20,7 +20,7 @@ namespace Register
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void login()
         {
             string username = tbUsername.Text;
             string password = tbPassword.Text;
@@ -44,10 +44,15 @@ namespace Register
                 {
                     User dashboard = new User();
                     dashboard.Show();
-                    this.Close();
+                    this.Hide();
                 }
 
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            login();
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -62,6 +67,20 @@ namespace Register
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
+        }
+
+
+        private void passTXTbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Call your desired function here
+                login();
+
+                // Optionally prevent the default behavior (e.g., the beep sound)
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
         }
     }
 }

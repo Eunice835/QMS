@@ -63,7 +63,7 @@
             checkBox1.AutoSize = true;
             checkBox1.Location = new Point(780, 588);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(184, 32);
+            checkBox1.Size = new Size(156, 27);
             checkBox1.TabIndex = 25;
             checkBox1.Text = "Show Password";
             checkBox1.UseVisualStyleBackColor = true;
@@ -72,10 +72,10 @@
             // tbPassword
             // 
             tbPassword.Location = new Point(555, 313);
-            tbPassword.Multiline = true;
             tbPassword.Name = "tbPassword";
-            tbPassword.Size = new Size(407, 37);
+            tbPassword.Size = new Size(407, 30);
             tbPassword.TabIndex = 22;
+            tbPassword.KeyDown += passTXTbox_KeyDown;
             // 
             // tbUsername
             // 
@@ -90,7 +90,7 @@
             label5.AutoSize = true;
             label5.Location = new Point(134, 437);
             label5.Name = "label5";
-            label5.Size = new Size(0, 28);
+            label5.Size = new Size(0, 23);
             label5.TabIndex = 19;
             // 
             // label4
@@ -98,7 +98,7 @@
             label4.AutoSize = true;
             label4.Location = new Point(443, 316);
             label4.Name = "label4";
-            label4.Size = new Size(101, 28);
+            label4.Size = new Size(85, 23);
             label4.TabIndex = 18;
             label4.Text = "Password";
             // 
@@ -107,7 +107,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(443, 241);
             label3.Name = "label3";
-            label3.Size = new Size(106, 28);
+            label3.Size = new Size(89, 23);
             label3.TabIndex = 17;
             label3.Text = "Username";
             // 
@@ -116,7 +116,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(555, 123);
             label2.Name = "label2";
-            label2.Size = new Size(299, 28);
+            label2.Size = new Size(253, 23);
             label2.TabIndex = 16;
             label2.Text = "Enter Your Credential To Login";
             // 
@@ -126,7 +126,7 @@
             SignUp.Font = new Font("Segoe UI", 28F, FontStyle.Bold, GraphicsUnit.Point, 0);
             SignUp.Location = new Point(512, 22);
             SignUp.Name = "SignUp";
-            SignUp.Size = new Size(413, 74);
+            SignUp.Size = new Size(348, 62);
             SignUp.TabIndex = 15;
             SignUp.Text = "Welcome Back";
             // 
@@ -159,7 +159,7 @@
             label6.ForeColor = SystemColors.ControlLightLight;
             label6.Location = new Point(27, 337);
             label6.Name = "label6";
-            label6.Size = new Size(387, 38);
+            label6.Size = new Size(333, 32);
             label6.TabIndex = 0;
             label6.Text = "Queue Management System";
             label6.Click += label6_Click;
@@ -172,14 +172,14 @@
             label7.ForeColor = SystemColors.ControlLightLight;
             label7.Location = new Point(963, 9);
             label7.Name = "label7";
-            label7.Size = new Size(27, 30);
+            label7.Size = new Size(24, 25);
             label7.TabIndex = 30;
             label7.Text = "X";
             label7.Click += label7_Click;
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(12F, 28F);
+            AutoScaleDimensions = new SizeF(10F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
             ClientSize = new Size(1002, 712);

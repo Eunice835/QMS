@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
+using System.Diagnostics.Metrics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,11 +16,15 @@ namespace Register
 {
     public partial class User : Form
     {
+        MySqlConnection connection = connectionDB.GetConnection();
+
         string connectionString = connectionDB.connectionString;
         //string connectionString = "server=localhost;database=queue_db;uid=eunice;pwd=password123;";
         public User()
         {
             InitializeComponent();
+
+
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -28,73 +34,113 @@ namespace Register
 
         private void LoadData()
         {
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlConnection conn = new MySqlConnection(connection.ConnectionString))
             {
-                string query = "SELECT name, contact FROM live_queue"; // Adjust column and table names
-                MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
-                DataTable table = new DataTable();
-                adapter.Fill(table);
+                conn.Open();
+                string query = @"SELECT * FROM user";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
 
-                // Bind the DataTable to the DataGridView
-                dataGridView1.DataSource = table;
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    // Clear existing rows in the DataGridView
+                    dgUsers.Rows.Clear();
 
-                // Add Update button column
-                DataGridViewButtonColumn updateColumn = new DataGridViewButtonColumn();
-                updateColumn.Name = "Update";
-                updateColumn.HeaderText = "Update";
-                updateColumn.Text = "Update";
-                updateColumn.UseColumnTextForButtonValue = true;
-                dataGridView1.Columns.Add(updateColumn);
+                    // Loop through the data reader and populate the DataGridView
+                    while (reader.Read())
+                    {
+                        // Assuming you have the columns in the DataGridView set up correctly
+                        int rowIndex = dgUsers.Rows.Add();
+                        DataGridViewRow row = dgUsers.Rows[rowIndex];
 
-                // Add Delete button column
-                DataGridViewButtonColumn deleteColumn = new DataGridViewButtonColumn();
-                deleteColumn.Name = "Delete";
-                deleteColumn.HeaderText = "Delete";
-                deleteColumn.Text = "Delete";
-                deleteColumn.UseColumnTextForButtonValue = true;
-                dataGridView1.Columns.Add(deleteColumn);
+                        // Populate the row with data from the reader
+                        row.Cells["FirstName"].Value = reader["first_name"];
+                        row.Cells["LastName"].Value = reader["last_name"];
+
+                        row.Cells["Email"].Value = reader["email"];
+                        row.Cells["Contact"].Value = reader["contact"];
+                        row.Cells["Delete"].Value = "Delete User";
+
+                    }
+
+                    foreach (DataGridViewRow row in dgUsers.Rows)
+                    {
+                        row.Cells["OriginalEmail"].Value = row.Cells["Email"].Value;
+                    }
+
+                }
             }
         }
+
+        private void dgUsers_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                // Ensure it's not a header row or an invalid cell
+                if (e.RowIndex >= 0 && e.RowIndex < dgUsers.Rows.Count)
+                {
+                    var row = dgUsers.Rows[e.RowIndex];
+
+                    // Skip if the row is a new row or the cell is null
+                    if (row.IsNewRow) return;
+
+                    var originalEmailCell = row.Cells["OriginalEmail"].Value; // Hidden or tracked original email
+                    var emailCell = row.Cells["Email"].Value;
+                    var firstnameCell = row.Cells["FirstName"].Value;
+                    var lastnameCell = row.Cells["LastName"].Value;
+                    var contactCell = row.Cells["Contact"].Value;
+
+                    // Ensure none of the values are null
+                    if (originalEmailCell == null || string.IsNullOrWhiteSpace(originalEmailCell.ToString()) ||
+                        emailCell == null || string.IsNullOrWhiteSpace(emailCell.ToString()) ||
+                        firstnameCell == null || string.IsNullOrWhiteSpace(firstnameCell.ToString()) ||
+                        lastnameCell == null || string.IsNullOrWhiteSpace(lastnameCell.ToString()) ||
+                        contactCell == null || string.IsNullOrWhiteSpace(contactCell.ToString()))
+                    {
+                        //MessageBox.Show("One or more required fields are empty. Update aborted.");
+                        return;
+                    }
+
+                    var originalEmail = originalEmailCell.ToString();
+                    var email = emailCell.ToString();
+                    var first_name = firstnameCell.ToString();
+                    var last_name = lastnameCell.ToString();
+                    var contact = contactCell.ToString();
+
+                    // Update query that also updates the primary key (email)
+                    string updateQuery = @"UPDATE user 
+                               SET email=@newEmail, first_name=@first_name, last_name=@last_name, contact=@contact 
+                               WHERE email=@originalEmail";
+                    using (MySqlConnection conn = new MySqlConnection(connectionString))
+                    {
+                        conn.Open();
+                        MySqlCommand updateCommand = new MySqlCommand(updateQuery, conn);
+                        updateCommand.Parameters.AddWithValue("@originalEmail", originalEmail);
+                        updateCommand.Parameters.AddWithValue("@newEmail", email);
+                        updateCommand.Parameters.AddWithValue("@first_name", first_name);
+                        updateCommand.Parameters.AddWithValue("@last_name", last_name);
+                        updateCommand.Parameters.AddWithValue("@contact", contact);
+                        updateCommand.ExecuteNonQuery();
+                    }
+
+                    // Update the OriginalEmail column to match the new email
+                    row.Cells["OriginalEmail"].Value = email;
+
+                    MessageBox.Show("User updated successfully.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+
+        }
+
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
             LoadData();
 
 
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Check if the clicked cell is a button cell
-            if (e.RowIndex >= 0)
-            {
-                string customerName = dataGridView1.Rows[e.RowIndex].Cells["name"].Value.ToString();
-
-                if (dataGridView1.Columns[e.ColumnIndex].Name == "Update")
-                {
-                    // Update logic
-                    MessageBox.Show($"Updating customer {customerName}");
-                    // Add your update logic here (e.g., open an edit form)
-                }
-                else if (dataGridView1.Columns[e.ColumnIndex].Name == "Delete")
-                {
-                    // Delete logic
-                    var result = MessageBox.Show($"Are you sure you want to delete {customerName}?", "Confirm Delete", MessageBoxButtons.YesNo);
-                    if (result == DialogResult.Yes)
-                    {
-                        string deleteQuery = $"DELETE FROM live_queue WHERE name = '{customerName}'";
-                        using (MySqlConnection conn = new MySqlConnection(connectionString))
-                        {
-                            conn.Open();
-                            MySqlCommand deleteCommand = new MySqlCommand(deleteQuery, conn);
-                            deleteCommand.ExecuteNonQuery();
-                        }
-                        MessageBox.Show("Record deleted successfully!");
-                        LoadData(); // Refresh data after deletion
-                    }
-                }
-            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -113,7 +159,44 @@ namespace Register
         {
             QueueList queueList = new QueueList();
             queueList.Show();
-            this.Hide();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            Dashboard dashboard = new Dashboard();
+            dashboard.Show();
+        }
+
+        private void dgUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dgUsers.Columns["Delete"].Index && e.RowIndex >= 0)
+            {
+                var email = dgUsers.Rows[e.RowIndex].Cells["Email"].Value.ToString();
+
+                DialogResult dialogResult = MessageBox.Show($"Delete this user with email {email}?", "Delete User", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    string deleteQuery = $"DELETE FROM user WHERE email=@email";
+                    using (MySqlConnection conn = new MySqlConnection(connectionString))
+                    {
+                        conn.Open();
+                        MySqlCommand deleteCommand = new MySqlCommand(deleteQuery, conn);
+                        deleteCommand.Parameters.AddWithValue("@email", email);
+                        deleteCommand.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("User deleted");
+
+                LoadData();
+
+            }
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            Report report = new Report();
+            report.Show();
         }
     }
 }
