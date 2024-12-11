@@ -152,7 +152,6 @@ namespace Register
         {
             Counter counter = new Counter();
             counter.Show();
-            this.Hide();
         }
 
         private void guna2Button4_Click(object sender, EventArgs e)
@@ -197,6 +196,11 @@ namespace Register
         {
             Report report = new Report();
             report.Show();
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

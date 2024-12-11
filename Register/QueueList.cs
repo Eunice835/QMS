@@ -34,52 +34,7 @@ namespace Register
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {
-            //using MySql.Data.MySqlClient;
-            //using System.Data;
 
-            // MySQL connection string
-            //string connectionString = "server=yourserver;user=youruser;password=yourpassword;database=yourdatabase";
-            //MySqlConnection connection = new MySqlConnection(connectionString);
-
-            //// Load queue data
-            //private void LoadQueueData()
-            //{
-            //    string query = "SELECT * FROM queue_table"; // Adjust the query for your table
-
-            //    MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
-            //    DataTable dataTable = new DataTable();
-            //    adapter.Fill(dataTable);
-
-            //    foreach (DataRow row in dataTable.Rows)
-            //    {
-            //        // Use the queue data to create Guna2Panel items dynamically
-            //        var queuePanel = new Guna.UI2.WinForms.Guna2Panel
-            //        {
-            //            BorderRadius = 10,
-            //            FillColor = Color.White,
-            //            Size = new Size(120, 80), // Adjust size as needed
-            //        };
-
-            //        // Add Labels for queue number, name, time, and status
-            //        Label lblQueue = new Label { Text = row["queue_number"].ToString(), AutoSize = true, Font = new Font("Arial", 10, FontStyle.Bold) };
-            //        Label lblName = new Label { Text = row["name"].ToString(), AutoSize = true };
-            //        Label lblTime = new Label { Text = row["time"].ToString(), AutoSize = true };
-
-            //        // Position these Labels inside the queuePanel
-            //        queuePanel.Controls.Add(lblQueue);
-            //        queuePanel.Controls.Add(lblName);
-            //        queuePanel.Controls.Add(lblTime);
-
-            //        // Add this queuePanel to the main content area
-            //        guna2PanelContent.Controls.Add(queuePanel); // Assuming guna2PanelContent is the main container
-            //    }
-            //}
-
-            //// Call LoadQueueData() when the form loads
-            //private void QueueForm_Load(object sender, EventArgs e)
-            //{
-            //    LoadQueueData();
-            //}
 
         }
 
@@ -144,6 +99,34 @@ namespace Register
                         row.Cells["Counter"].Value = reader["counter"];
                         row.Cells["WaitingTime"].Value = reader["waiting_time"];
                         row.Cells["Remove"].Value = "Remove";
+                    }
+                }
+            }
+
+            using (MySqlConnection conn = new MySqlConnection(connection.ConnectionString))
+            {
+                conn.Open();
+                string query = @"SELECT * FROM proceeding_queue WHERE rescheduled='Yes'";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    // Clear existing rows in the DataGridView
+                    dgSchedule.Rows.Clear();
+
+                    // Loop through the data reader and populate the DataGridView
+                    while (reader.Read())
+                    {
+                        // Assuming you have the columns in the DataGridView set up correctly
+                        int rowIndex = dgSchedule.Rows.Add();
+                        DataGridViewRow row = dgSchedule.Rows[rowIndex];
+
+                        // Populate the row with data from the reader
+                        row.Cells["NameS"].Value = reader["name"];
+                        row.Cells["QueueS"].Value = reader["queue_number"];
+                        row.Cells["TimeS"].Value = reader["time"];
+                        row.Cells["ContactS"].Value = reader["contact"];
+                        row.Cells["RemoveS"].Value = "Remove";
                     }
                 }
             }
@@ -225,6 +208,52 @@ namespace Register
                     fill_proceeding(); // Refresh data after deletion
                 }
             }
+        }
+
+        private void dgSchedule_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dgSchedule.Columns["RemoveS"].Index && e.RowIndex >= 0)
+            {
+                var queueNum = dgSchedule.Rows[e.RowIndex].Cells["QueueS"].Value.ToString();
+                var name = dgSchedule.Rows[e.RowIndex].Cells["NameS"].Value.ToString();
+
+                var result = MessageBox.Show($"Are you sure you want to remove {name}?", "Confirm Delete", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    string deleteQuery = $"DELETE FROM proceeding_queue WHERE queue_number = '{queueNum}'";
+                    using (MySqlConnection conn = new MySqlConnection(connectionString))
+                    {
+                        conn.Open();
+                        MySqlCommand deleteCommand = new MySqlCommand(deleteQuery, conn);
+                        deleteCommand.ExecuteNonQuery();
+                    }
+                    MessageBox.Show("Record removed successfully!");
+                    fill_proceeding(); // Refresh data after deletion
+                }
+            }
+        }
+
+        private void guna2Button1_Click_1(object sender, EventArgs e)
+        {
+            AddUserQueue addUserQueue = new AddUserQueue("proceeding");
+            addUserQueue.Show();
+        }
+
+        private void btnAddLive_Click(object sender, EventArgs e)
+        {
+            AddUserQueue addUserQueue = new AddUserQueue("live");
+            addUserQueue.Show();
+        }
+
+        private void btnAddSchedule_Click(object sender, EventArgs e)
+        {
+            AddUserQueue addUserQueue = new AddUserQueue("schedule");
+            addUserQueue.Show();
+        }
+
+        private void guna2Button1_Click_2(object sender, EventArgs e)
+        {
+            fill_proceeding() ;
         }
     }
 }
