@@ -238,5 +238,38 @@ namespace Register
         {
 
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            Dashboard dashboard = new Dashboard();
+            dashboard.Show();
+            this.Hide();
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            User user = new User();
+            user.Show();
+            this.Hide();
+        }
+
+        private void guna2Button6_Click(object sender, EventArgs e)
+        {
+            Feedback feedback = new Feedback();
+            feedback.Show();
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            QueueList queuelist = new QueueList();
+            queuelist.Show();
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            Report report = new Report();
+            report.Show();
+            this.Hide();
+        }
     }
 }

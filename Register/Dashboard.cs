@@ -32,7 +32,9 @@ namespace Register
 
         private void guna2Button5_Click(object sender, EventArgs e)
         {
-
+            Report report = new Report();
+            report.Show();
+            this.Hide();    
         }
 
         private void load_data()
@@ -120,7 +122,8 @@ namespace Register
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
-
+            QueueList queueList = new QueueList();
+            queueList.Show();   
         }
 
         private void guna2Button7_Click(object sender, EventArgs e)
@@ -130,7 +133,9 @@ namespace Register
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-
+            Counter counter = new Counter();
+            counter.Show();
+            this.Hide();
         }
 
         private void guna2Panel4_Paint(object sender, PaintEventArgs e)
@@ -141,6 +146,19 @@ namespace Register
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            User user = new User();
+            user.Show();
+            this.Hide();
+        }
+
+        private void guna2Button6_Click(object sender, EventArgs e)
+        {
+            Feedback feedback = new Feedback();
+            feedback.Show();
         }
     }
     //    namespace YourNamespace

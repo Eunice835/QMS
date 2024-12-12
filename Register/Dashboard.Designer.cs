@@ -307,7 +307,8 @@
             guna2Button6.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2Button6.Size = new Size(126, 42);
             guna2Button6.TabIndex = 5;
-            guna2Button6.Text = "Profile";
+            guna2Button6.Text = "Feedback";
+            guna2Button6.Click += guna2Button6_Click;
             // 
             // guna2Button5
             // 
@@ -364,6 +365,7 @@
             guna2Button3.Size = new Size(126, 42);
             guna2Button3.TabIndex = 2;
             guna2Button3.Text = "Users";
+            guna2Button3.Click += guna2Button3_Click;
             // 
             // guna2Button2
             // 

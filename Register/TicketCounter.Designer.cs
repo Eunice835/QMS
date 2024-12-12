@@ -270,7 +270,8 @@
             guna2Button6.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Button6.Size = new Size(126, 42);
             guna2Button6.TabIndex = 5;
-            guna2Button6.Text = "Profile";
+            guna2Button6.Text = "Feedback";
+            guna2Button6.Click += guna2Button6_Click;
             // 
             // guna2Button5
             // 
@@ -289,6 +290,7 @@
             guna2Button5.Size = new Size(126, 42);
             guna2Button5.TabIndex = 4;
             guna2Button5.Text = "Report";
+            guna2Button5.Click += guna2Button5_Click;
             // 
             // guna2Button4
             // 
@@ -307,6 +309,7 @@
             guna2Button4.Size = new Size(126, 42);
             guna2Button4.TabIndex = 3;
             guna2Button4.Text = "Queue List";
+            guna2Button4.Click += guna2Button4_Click;
             // 
             // guna2Button3
             // 
@@ -325,6 +328,7 @@
             guna2Button3.Size = new Size(126, 42);
             guna2Button3.TabIndex = 2;
             guna2Button3.Text = "Users";
+            guna2Button3.Click += guna2Button3_Click;
             // 
             // guna2Button2
             // 
@@ -361,6 +365,7 @@
             guna2Button1.Size = new Size(126, 42);
             guna2Button1.TabIndex = 0;
             guna2Button1.Text = "Dashboard";
+            guna2Button1.Click += guna2Button1_Click;
             // 
             // panel5
             // 

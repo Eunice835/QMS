@@ -152,6 +152,7 @@ namespace Register
         {
             Counter counter = new Counter();
             counter.Show();
+            this.Hide();
         }
 
         private void guna2Button4_Click(object sender, EventArgs e)
@@ -164,6 +165,7 @@ namespace Register
         {
             Dashboard dashboard = new Dashboard();
             dashboard.Show();
+            this.Hide();
         }
 
         private void dgUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -196,11 +198,18 @@ namespace Register
         {
             Report report = new Report();
             report.Show();
+            this.Hide();
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
+            
+        }
 
+        private void guna2Button6_Click(object sender, EventArgs e)
+        {
+            Feedback feedback = new Feedback();
+            feedback.Show();
         }
     }
 }
